@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Баннер</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        z-index: 100;
+      }
+
+      .header a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+
+      .header a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+
+        left: 50%;
+        bottom: 0;
+        transition: 0.3s;
+      }
+      .header a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: url("https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/sydney-harbour-bridge-city-skyline-at-night-tourism-australia-1-scaled.jpg.webp")
+          no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      .explain {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-weight: lighter;
+        font-size: 12px;
+        gap: 17px;
+      }
+      .banner::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Қараю эффектісі */
+        top: 0;
+        left: 0;
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        max-width: 80%;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .banner-content h1 {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .banner-content p {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+
+      .banner-content a {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #f4a261;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+        background: #2a1c1c;
+        color: white;
+      }
+
+      .section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+      }
+
+      .first-section {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .map-container img {
+        width: 400px;
+      }
+
+      .highlights {
+        max-width: 50%;
+      }
+
+      .images {
+        display: flex;
+        gap: 20px;
+      }
+
+      .image img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .second-section {
+        background: #f4f1e7;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .text-container {
+        max-width: 50%;
+      }
+
+      .buttons button {
+        margin-right: 10px;
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+        background: #3e292e;
+        color: rgb(255, 255, 255);
+      }
+
+      .first-screen,
+      .second-screen {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+      }
+
+      .first-screen {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .map-container img {
+        width: 600px;
+      }
+
+      .highlights {
+        max-width: 50%;
+      }
+
+      .images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .image img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .second-screen {
+        background: #f4f1e7;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .text-container {
+        max-width: 50%;
+      }
+
+      .buttons button {
+        margin-right: 10px;
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .image-container img {
+        width: 600px;
+      }
+      .first-screen {
+        display: flex;
+        justify-content: space-between;
+        height: 200vh; /* Ұзын қылып қоямыз */
+        overflow: hidden;
+      }
+
+      .map-container {
+        width: 50%;
+        position: sticky;
+        top: 0; /* Картаны бекітеміз, қозғалмай тұрады */
+      }
+
+      .highlights {
+        width: 50%;
+        transition: transform 1s ease-in-out;
+      }
+
+      /* Оң жақ бөлік төмен түседі */
+      .scroll-active .highlights {
+        transform: translateY(100px);
+      }
+
+      /* Егер код біткенде, екеуі де қозғалады */
+      .scroll-complete .map-container {
+        transform: translateY(100px);
+      }
+      .scroll-complete .highlights {
+        transform: translateY(200px);
+      }
+
+      .first-screen {
+        display: flex;
+        justify-content: space-between;
+        height: 200vh;
+        overflow: hidden;
+      }
+
+      .map-container {
+        width: 50%;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+
+      .highlights {
+        width: 50%;
+        overflow-y: auto;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .accordion-item {
+        border-bottom: 1px solid #555; /* Астында сызық болу үшін */
+        padding: 10px 0;
+      }
+
+      .accordion-header {
+        color: white;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .accordion-content {
+        color: white;
+        display: none;
+        padding: 10px 0;
+      }
+      .slide img {
+        text-align: center;
+        align-items: center;
+        width: 780px;
+        height: 490px;
+      }
+      .slide {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        min-width: 100%;
+        transition: opacity 0.5s ease-in-out;
+        position: relative;
+      }
+
+      /* Мобильді версия үшін медиа-сұраныстар */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .header a {
+          font-size: 16px;
+        }
+
+        .banner-content h1 {
+          font-size: 30px;
+        }
+
+        .banner-content p {
+          font-size: 14px;
+        }
+
+        .banner-content a {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+
+        .explain {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .first-screen {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .map-container {
+          width: 100%;
+          position: static;
+          height: auto;
+        }
+
+        .map-container img {
+          width: 100%;
+        }
+
+        .highlights {
+          width: 100%;
+          padding: 10px;
+        }
+
+        .images {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .image img {
+          width: 100%;
+          height: auto;
+        }
+
+        .second-section {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .text-container {
+          max-width: 100%;
+        }
+
+        .image-container img {
+          width: 100%;
+        }
+
+        .carousel {
+          max-width: 100%;
+        }
+
+        .carousel-container {
+          width: 90%;
+        }
+
+        .slide img {
+          width: 100%;
+          height: auto;
+        }
+
+        .accordion-header {
+          font-size: 16px;
+        }
+
+        .accordion-content {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Home</a>
+      <a href="travel.html">Git</a>
+      <a href="weather.html">Weather</a>
+      <a href="Team.html">Team</a>
+    </div>
+
+    <div class="banner">
+      <div class="banner-content">
+        <p>The Tailor Journeys</p>
+        <h1>Iconic Australia – Sea, City and Culture</h1>
+        <div class="explain" style="margin-top: 82px">
+          <div class="imp">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/themes/the-tailor/images/con1.svg"
+              alt=""
+            />
+            <p>Minimum 6 people</p>
+          </div>
+          <div class="imp">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/themes/the-tailor/images/con2.svg"
+              alt=""
+            />
+            <p>From AUD $116,333 per person</p>
+          </div>
+          <div class="imp">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/themes/the-tailor/images/con3.svg"
+              alt=""
+            />
+            <p>28 Days experienc</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!DOCTYPE html>
+    <html lang="kk">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Australia Trip</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <div class="section second-section">
+          <div class="text-container">
+            <h2>ITINERARY</h2>
+            <h1>
+              A twenty-eight-day journey celebrating Australia’s unique heritage
+              and iconic destinations, legends and landmarks
+            </h1>
+            <p>
+              Developed to celebrate The Tailor’s 25th anniversary, travel from
+              the harbour-side lights of Sydney to the wildlife haven of
+              Kangaroo Island and on to a private yacht cruise of the ruggedly
+              beautiful Kimberley coastline, ending with a private island stay
+              on the Great Barrier Reef. Explore some of the country’s most
+              sought-after destinations, forge deep connections with passionate
+              locals and enjoy unique experiences that are only available
+              through The Tailor.
+            </p>
+          </div>
+          <div class="image-container">
+            <img
+              style="width: 300px"
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/silky-oaks-lodge-jungle-perch-left-853x1024.webp"
+              alt="Australia Adventure"
+            />
+          </div>
+        </div>
+
+        <script src="script.js"></script>
+      </body>
+    </html>
+    <script>
+      window.addEventListener("scroll", function () {
+        document.querySelector(".second-section").style.opacity = 1;
+      });
+    </script>
+
+    <section class="first-screen">
+      <div class="map-container">
+        <img src="mapaus3.jpg" alt="Australia Map" />
+      </div>
+      <div class="highlights">
+        <h2 style="margin-top: 50px">HIGHLIGHTS</h2>
+        <h1 style="margin-bottom: 30px">Trip <i>highlights</i></h1>
+
+        <div class="images">
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Bondi-Beach-scaled.jpg.webp"
+              alt="Sydney"
+            />
+            <p>Sydney</p>
+          </div>
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/Boardwalk-1-scaled.jpg.webp"
+              alt="Kangaroo Island"
+            />
+            <p>Kangaroo Island</p>
+          </div>
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/Rainbow-Beach-Tiwi-Islands-Elise-Cook-3-scaled.jpg.webp"
+              alt="Top End"
+            />
+            <p>Top End</p>
+          </div>
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/127830-56.jpg.webp"
+              alt="Uluru"
+            />
+            <p>Uluru & Red Centre</p>
+          </div>
+
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/silky-oaks-lodge-swimming-pool-aerial.webp"
+              alt="Port Douglas & Daintree Rainforest"
+            />
+            <p>Port Douglas & Daintree Rainforest</p>
+          </div>
+
+          <div class="image">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Montgomery-Reef-Kimberley-2-scaled.jpg.webp"
+              alt="Uluru"
+            />
+            <p>The Kimberley</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 100px; margin-bottom: 80px">
+          Why travel with us?
+          <hr />
+        </h2>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-196.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              LEADERS IN LUXURY <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Founded on excellence and authenticity, The Tailor has created
+                innovative and hand-crafted luxury travel experiences for guests
+                since 1998. Recognised as pioneers in our field, we are
+                continually seeking new ways to push the boundaries of luxury
+                travel.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-197.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              FULLY TAILORED <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Fully-tailored journeys with five-star standard are the core of
+                what we offer. Our experienced Travel Designers customise every
+                single component of your journey and take note of all details
+                that will make your journey exceptional for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-198.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              ABSOLUTE PEACE OF MIND <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Our team’s expertise ensures the full magic carpet ride. Sit
+                back and relax as your journey is completely looked after by
+                your on-call dedicated Travel Designer, who will provide
+                up-to-date travel awareness, assist whenever needed, and ensure
+                you’re travelling in safety and style every step of the way.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-199.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              AUTHENTIC AND RESPONSIBLE TRAVEL EXPERIENCES<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                We have strong connections with an enormous network of the
+                industry’s finest magic-makers who provide guests insightful
+                insider access. Connecting you with real experiences and real
+                people, your journey will immerse you into authentic culture,
+                locations, and lifestyles of each region.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-200.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              EXCLUSIVE TAILOR VIP ACCESS<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Our leading position in the Australian luxury travel industry
+                and commitment to innovation allows guests travelling under our
+                name to receive the VIP treatment every time, connecting you to
+                the best guides, additional amenities, and outstanding private
+                experiences away from other guests. We lead the way in
+                discovering and developing proprietary travel experiences, many
+                of which are only accessible through us.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Frame-201.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              AWARD-WINNING AUSRALIAN LUXURY<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                We are a multi-award-winning company with many accolades from
+                respected providers across the globe. We have received awards
+                from Condé Nast, Serandipians, Travel + Leisure, National
+                Geographic, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 100px; margin-bottom: 80px">
+          What’s included
+          <hr />
+        </h2>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              3 nights at Capella Sydney <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/Skyline_Room_King_7037_5027_HR-scaled.jpg"
+                alt=""
+              />
+              <p>
+                Taking pride of place in Sydney’s commercial, arts and cultural
+                hub, the Capella Sydney is an enviable new luxury offering in
+                the heart of the harbour city’s lively CBD. Housed in an
+                intricately restored heritage-listed building that was initially
+                developed in the early 1930’s, this beautiful hotel balances
+                storied architectural features with a light-palleted
+                contemporary design aesthetic. Capella Sydney has been designed
+                to indulge guests with luxurious accommodation, world-class
+                cuisine, and cultural immersion.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              3 nights at Southern Ocean Lodge<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                World-renowned luxury on the wildly beautiful south coast of
+                Kangaroo Island is available at this iconic cliffside lodge.
+                Recently rebuilt with the features that guests loved best along
+                with some considerable extras, there is so much to enjoy and
+                explore at the new-look Southern Ocean Lodge.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              3 nights at Sequoia Lodge <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                An elegant sanctuary nestled alongside the historic Mount Lofty
+                House, Sequoia is a luxury lodge boasting panoramic views of the
+                Adelaide Hills, personalised service, and exceptional food and
+                wine. It is named for the 150-year-old Sequoia trees planted by
+                Arthur and Martha Hardy, the original owners of the adjacent
+                Mount Lofty House.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              2 nights at Longitude 131°<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Nestled atop rust-red dunes, Longitude 131° overlooks
+                Australia’s best-known natural icon, Uluru, and is arguably one
+                of the best luxury wilderness camps in the world. The welcome
+                open spaces of the central Dune House include the restaurant
+                with ever-changing views of the mysterious monolith Uluru as a
+                backdrop for every meal, as well as lounging areas in
+                contemporary campaign style, ideal for relaxing with an icy
+                drink and exchanging stories of the day’s outback adventures.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              3 nights at Finniss River Lodge<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Finniss River Lodge is an exciting and intimate experiential
+                luxury lodge built alongside the vast coastal floodplains of the
+                Top End. Owned and operated by third-generation pastoralists,
+                this remarkable property offers a profound sense of isolation
+                within a diversity of stunning landscapes, all while being
+                easily accessible from Darwin.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              2 nights at Silky Oaks Lodge<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Found within the heart of the World Heritage-listed Daintree
+                Rainforest alongside the Mossman River, Silky Oaks Lodge
+                delivers a five-star luxury lodge experience in Tropical North
+                Queensland. This premium escape is perfectly positioned between
+                Tropical North Queensland’s natural attractions of the
+                primordial Daintree Rainforest and the sparkling Great Barrier
+                Reef. Only an hour from Cairns and a 20-minute drive from Port
+                Douglas, Silky Oaks Lodge offers a secluded escape into one of
+                Australia’s most magnificent landscapes.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              4 nights at The House at Lizard Island<span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                The House at Lizard Island is a world-class reef house,
+                perfectly positioned on the doorstep of the Great Barrier Reef.
+                Embodying all things authentically Australian while offering
+                unparalleled privacy and personalised service, The House offers
+                barefoot adventure, a profound connection to nature, and
+                laidback luxury at its finest.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              7-night private charter with
+            </button>
+            <div class="accordion-content">
+              <p></p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              Private heli or fixed wing charter flights
+            </button>
+            <div class="accordion-content">
+              <p></p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Accommodation.svg"
+              alt=""
+            />
+            <button class="accordion-header">
+              24-hour access to The Tailor support staff while travelling in
+              Australia
+            </button>
+            <div class="accordion-content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" style="padding: 50px 0">
+      <h3
+        class="gallery-title"
+        style="
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: 2px;
+          color: rgba(255, 255, 255, 0.7);
+        "
+      >
+        IMAGE GALLERY
+      </h3>
+      <h2
+        class="gallery-heading"
+        style="
+          text-align: center;
+          font-size: 28px;
+          font-style: italic;
+          margin-bottom: 50px;
+        "
+      >
+        <i>Must-see sights</i> on your trip
+      </h2>
+
+      <div
+        class="carousel"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          max-width: 90%;
+          margin: auto;
+        "
+      >
+        <button class="prev">&#10094;</button>
+
+        <div
+          class="carousel-container"
+          style="width: 80%; overflow: hidden; position: relative"
+        >
+          <div
+            class="carousel-track"
+            style="display: flex; transition: transform 0.5s ease-in-out"
+          >
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Exceptional-Kangaroo-Island.webp"
+                alt="Park Hyatt Sydney"
+              />
+              <p class="caption">
+                Exceptional-Kangaroo-Island | South Australia <span></span>
+              </p>
+            </div>
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/The-Great-Room-1.jpg.webp"
+                alt="Saffire Freycinet"
+              />
+              <p class="caption">
+                Southern Ocean Lodge | Kangaroo Island South Australia
+                <span></span>
+              </p>
+            </div>
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/12.-Clifftop-Walk.jpg.webp"
+                alt=""
+              />
+              <p class="caption">
+                Southern Ocean Lodge| Kangaroo Island South Australia
+                <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/sequoia-lodge-adelaide-hills-exterior-hero.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Sequoia Lodge| Adelaide Hills <span>Location</span>
+              </p>
+            </div>
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/longitude-131-uluru-dining-1.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Longitude 131| Uluru, Norhthern Territory <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Finniss-River-Lodge-Poll-with-a-view.jpg.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Finniss River Lodge| Top End,Norhthern Territory
+                <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/magestic-jim-jim-falls-kakadu-national-park-nt-landscape.jpg.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Jim Jim Falls| The Kimberley <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/silky-oaks-lodge-jungle-perch.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Silky Oaks Lodge| Daintree Rainforest Qeensland<span
+                  >Location</span
+                >
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/lizard-island-aerial-great-barrier-reef-1.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Lizard Island and the Great Barrier Reef| Qeensland<span
+                  >Location</span
+                >
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/09/Rectangle-144.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Paddleboarding | Great Barrier Reef,Qeensland
+                <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/Sydney-Skyline-2.jpg"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Sydney Skyline| New South Wales <span>Location</span>
+              </p>
+            </div>
+
+            <div class="slide">
+              <img
+                src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/blue-mountains-abseiling-james-castrission-nsw-scaled-1.webp"
+                alt="Another Destination"
+              />
+              <p class="caption">
+                Abseling | Blue Mountains , New South Wales<span>Location</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="next">&#10095;</button>
+      </div>
+    </section>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        document.querySelector(".second-screen").style.opacity = 1;
+      });
+      window.addEventListener("scroll", function () {
+        let scrollY = window.scrollY;
+        let pageHeight = document.body.scrollHeight - window.innerHeight;
+
+        // Егер скролл төмендесе, тек оң жақ қозғалады
+        if (scrollY > 100) {
+          document
+            .querySelector(".first-screen")
+            .classList.add("scroll-active");
+        }
+
+        // Егер скролл соңына жетсе, екеуі бірге қозғалады
+        if (scrollY >= pageHeight - 50) {
+          document
+            .querySelector(".first-screen")
+            .classList.add("scroll-complete");
+        }
+      });
+
+      document.querySelectorAll(".accordion-header").forEach((button) => {
+        button.addEventListener("click", () => {
+          let content = button.nextElementSibling;
+          let span = button.querySelector("span");
+
+          if (content.style.display === "block") {
+            content.style.display = "none";
+            span.textContent = "+";
+          } else {
+            content.style.display = "block";
+            span.textContent = "−";
+          }
+        });
+      });
+
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector(".next");
+      const prevButton = document.querySelector(".prev");
+
+      let currentIndex = 0;
+
+      function updateSlide() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Егер соңғы сурет болса, басына қайта өтеді
+        }
+        updateSlide();
+      });
+
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = slides.length - 1; // Бірінші суреттен соңғысына өтеді
+        }
+        updateSlide();
+      });
+    </script>
+  </body>
+</html>

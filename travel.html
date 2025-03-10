@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Галерея</title>
+    <style>
+      body {
+        background-color: #2e3b2f;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .header a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .header a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: white;
+        left: 50%;
+        bottom: 0;
+        transition: 0.3s;
+      }
+      .header a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      .gallery {
+        display: flex;
+        overflow: hidden;
+        width: 90%;
+        margin: auto;
+        position: relative;
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px;
+      }
+      .slide {
+        min-width: calc(100% / 3);
+        box-sizing: border-box;
+        position: relative;
+      }
+      .slide img {
+        margin-top: 70px;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      .slide img:hover {
+        transform: scale(1.05);
+      }
+      .arrows {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 0 20px;
+      }
+      .arrow {
+        cursor: pointer;
+        font-size: 30px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+      }
+      .arrow:hover {
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.1);
+      }
+
+      .slide {
+        min-width: calc(100% / 3);
+        box-sizing: border-box;
+        position: relative; /* Жазуды суреттің ішінде орналастыру үшін */
+      }
+
+      .slide img {
+        margin-top: 70px;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .text {
+        position: absolute;
+        bottom: 0; /* Жазу суреттің төменгі жағына орналасады */
+        left: 0;
+        width: 100%;
+
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+      }
+
+      .text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        align-items: center;
+        font-size: 18px;
+        transition: background 0.3s ease-in-out;
+      }
+
+      .slide:hover .text {
+        background: rgba(0, 0, 0, 0.8); /* Мышка тигенде қаралау күшейеді */
+      }
+
+      /* Мобильді экранда swipe функциясы */
+      @media (max-width: 768px) {
+        .gallery {
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+        }
+
+        .slides {
+          scroll-snap-type: x mandatory;
+        }
+
+        .slide {
+          scroll-snap-align: start;
+        }
+
+        .arrows {
+          display: none; /* Мобильді экранда батырмаларды жасыру */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Home</a>
+      <a href="travel.html">Git</a>
+      <a href="weather.html">Weather</a>
+      <a href="Team.html">Team</a>
+    </div>
+
+    <div class="gallery">
+      <div class="arrows">
+        <span class="arrow" onclick="prevSlide()">&#9664;</span>
+        <span class="arrow" onclick="nextSlide()">&#9654;</span>
+      </div>
+      <div class="slides">
+        <div class="slide">
+          <a href="git1.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/146891-scaled.jpg.webp"
+              alt="Сурет 1"
+            />
+          </a>
+          <div class="text">Travel Australia like a Rockstar<br />17 DAY</div>
+        </div>
+        <div class="slide">
+          <a href="git2.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/EKIAIS11-scaled.jpg.webp"
+              alt="Сурет 2"
+            />
+          </a>
+          <div class="text">Around Australia in 14 Days<br />14 DAY</div>
+        </div>
+        <div class="slide">
+          <a href="git3.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/sydney-harbour-bridge-city-skyline-at-night-tourism-australia-1-scaled.jpg.webp"
+              alt="Сурет 3"
+          /></a>
+          <div class="text">
+            Iconic Australia - Sea, City and Culture<br />28 DAY
+          </div>
+        </div>
+        <div class="slide">
+          <a href="git4.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/10/great-barrier-reef-corals-aerial-scaled.jpeg.webp"
+              alt="Сурет 4"
+          /></a>
+          <div class="text">Red Centre to Reef<br />10 DAY</div>
+        </div>
+        <div class="slide">
+          <a href="git5.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Orpheus-Island-James-Vodicka-Photography-4-scaled.jpg.webp"
+              alt="Сурет 5"
+          /></a>
+          <div class="text">
+            Reef, Rainforest and Wildlife: A Family Itinerary<br />14 DAY
+          </div>
+        </div>
+        <div class="slide">
+          <a href="git6.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/Longitude-131_Ayers-Rock-Uluru_Dune-Top-Aerial-1-scaled.jpg.webp"
+              alt="Сурет 6"
+          /></a>
+          <div class="text">Red To White Sands<br />13 DAY</div>
+        </div>
+        <div class="slide">
+          <a href="git7.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/DJI_0076-HDR-Pano-Edit-2-scaled.jpg.webp"
+              alt="Сурет 7"
+          /></a>
+          <div class="text">
+            Off the Beaten Track in Style: A Top End Itinerary<br />10 DAY
+          </div>
+        </div>
+        <div class="slide">
+          <a href="git8.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/12/Canyoning-1-scaled.jpg.webp"
+              alt="Сурет 8"
+          /></a>
+          <div class="text">
+            Australia’s Best Adrenaline Adventure<br />14 DAY
+          </div>
+        </div>
+        <div class="slide">
+          <a href="git9.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/11/AustralianCoastalSafaris1221-339-scaled.jpg.webp"
+              alt="Сурет 9"
+          /></a>
+          <div class="text">Sydney, Safari, Reef & Shiraz<br />14 DAY</div>
+        </div>
+        <div class="slide">
+          <a href="git10.html">
+            <img
+              src="https://cdn-ilcjnhf.nitrocdn.com/WrOalDgDjmCJxPsWwhNdVnGHsvdYcSun/assets/images/optimized/rev-a4e4fdb/thetailor.com/wp-content/uploads/2024/12/8fd7d9bb107e92c6bc5677bd26bff7a1.Capella-Lodge_Lord-Howe-Island_Gowers-Terrace-Man-Pool.jpeg.webp"
+              alt="Сурет 10"
+          /></a>
+          <div class="text">
+            Southern Safari in Style: Sydney, Lord Howe Island, Melbourne and
+            Tasmania<br />13 DAY
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let index = 0;
+      function showSlide() {
+        const slides = document.querySelector(".slides");
+        slides.style.transform = `translateX(-${index * (100 / 3)}%)`;
+      }
+      function prevSlide() {
+        if (index > 0) index--;
+        showSlide();
+      }
+      function nextSlide() {
+        const slidesCount = document.querySelectorAll(".slide").length;
+        if (index < slidesCount - 3) index++;
+        showSlide();
+      }
+
+      // Swipe функциясы (мобильді экранда)
+      let startX = 0;
+      let endX = 0;
+
+      slides.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      slides.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        if (startX - endX > 50) {
+          nextSlide(); // Оңға swipe
+        } else if (endX - startX > 50) {
+          prevSlide(); // Солға swipe
+        }
+      }
+    </script>
+  </body>
+</html>
